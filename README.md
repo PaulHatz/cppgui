@@ -3,40 +3,38 @@
 
 <H2>CPPGUI</H2>
 
-<P>
-CPPGUI is a framework which allows developers to easily create a GUI applicaton with C++
-</P>
-
-<H3>This project will have 3 stages of development</H3>
-<ol>
-	<li>Build base framework</li>
-	<li>Transform project into portable library</li>
-	<li>Create web-based inteface to generate an application design. (More details later on...)</li>
-</ol>
-
-
-<H3>Currently Supported Objects</H3>
-<ul>
-	<li>Button</li>
-	<li>CheckBox</li>
-	<li>RadioButton</li>
-	<li>DataGridView</li>
-	<li>GroupBox</li>
-	<li>Label</li>
-	<li>TextBox</li>
-	<li>NumericUpDown</li>
-	<li>TrackBar</li>
-	<li>ContextMenuStrip</li>
-	<li>TabControl</li>
-</ul>
-
-<H3>Future Plans...</H3>
-<ol>
-	<li>Add Support for D3D12</li>
-	<li>Add Support for OpenGL</li>
-	<li>Add support for Linux.</li>
-</ol>
-
-
+<P>CPPGUI is a framework which allows developers to easily build and design a lightweight GUI in a C++ application.</P>
+<TABLE>
+	<TR>
+		<TH>Easy to use</TH>
+		<TH>Lightweight</TH>
+		<TH>Portable</TH>
+	</TR>
+</TABLE>
+	<H4>Supported Objects</H4>
+	<TABLE>
+		<TR>
+		<TD>Button</TD>
+		<TD>CheckBox</TD>
+		<TD>RadioButton</TD>
+		</TR>
+		<TR>
+		<TD>GroupBox</TD>
+		<TD>Label</TD>
+		<TD>TextBox</TD>
+		</TR>
+		<TR>
+		<TD>NumericUpDown</TD>
+		<TD>TrackBar</TD>
+		<TD>ContextMenuStrip</TD>
+		</TR>
+		<TR>
+			<TD>TabControl</TD>
+			<TD>DataGridView</TD>
+			<TD>Form</TD>
+		</TR>
+	</TABLE>
+	
+	
 </BODY>
 </HTML>
