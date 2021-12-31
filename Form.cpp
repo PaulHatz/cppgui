@@ -164,7 +164,7 @@ void Form_Hover(guiObject *sender, EventArgs *e)
 	//UI::_SET_CURSOR_SPRITE(4);
 }
 
-Form::Form(guiObject *parent) : guiObject(parent, this)
+Form::Form(guiObject *parent) : guiObject(parent, ObjectType::OBJ_Form)
 {
 	this->draggableTopbar = nullptr;
 

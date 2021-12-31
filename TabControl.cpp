@@ -135,7 +135,7 @@ TabPage *TabControl::addNewTabPage(std::string text)
 			ZeroMemory(e, sizeof(e));
 			e->tabpagePtr = tabPage;
 
-			tabControlHitBox->addEvent(eventClick, std::bind(TabControl_Click, tabControlHitBox, (TabChangeEventArgs *)e));
+			tabControlHitBox->addEvent(eventClick, std::bind(TabControl_Click, tabControlHitBox, e));
 
 			this->pages.push_back(tabPage);
 
@@ -149,7 +149,7 @@ TabPage *TabControl::addNewTabPage(std::string text)
 	return nullptr;
 }
 
-TabControl::TabControl(guiObject *parent) : guiObject(parent, this)
+TabControl::TabControl(guiObject *parent) : guiObject(parent, ObjectType::OBJ_TabControl)
 {
 	if (parent)
 		parent->addChild(this);

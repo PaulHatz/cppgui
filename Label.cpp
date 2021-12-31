@@ -72,7 +72,7 @@ void Label::hide()
 		this->textElem->FadeOverTime(0, this->color[0], this->color[1], this->color[2], 0.f);
 }
 
-Label::Label(guiObject *parent) : guiObject(parent, this)
+Label::Label(guiObject *parent) : guiObject(parent, ObjectType::OBJ_Label)
 {
 	if (parent) {
 		parent->addChild(this);

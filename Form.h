@@ -26,7 +26,7 @@ private:
 	class game_hudelem_s *titleElem;
 	class game_hudelem_s *minimizeBtnElem;
 
-	GuiDialogBox *dialogBox;
+	class GuiDialogBox *dialogBox;
 
 public:
 

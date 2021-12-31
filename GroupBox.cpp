@@ -135,7 +135,7 @@ void GroupBox::setBackgroundColor(float r, float g, float b)
 	this->backgroundColor[2] = b;
 }
 
-GroupBox::GroupBox(guiObject *parent) : guiObject(parent, this)
+GroupBox::GroupBox(guiObject *parent) : guiObject(parent, ObjectType::OBJ_GroupBox)
 {
 	if (parent) {
 		parent->addChild(this);

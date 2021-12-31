@@ -61,6 +61,7 @@ public:
 
 	bool equals(Event *ev);
 
+
 	Event();
 	Event(class guiObject *object);
 	Event(EventList eventName, class guiObject *object);

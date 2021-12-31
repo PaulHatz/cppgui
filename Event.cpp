@@ -63,5 +63,9 @@ Event::Event(guiObject *object)
 Event::Event(EventList eventName, guiObject *object)
 {
 	this->eventName = eventName;
+
+	this->eventAction = nullptr;
+	this->eventArgs = nullptr;
+
 	this->object = object;
 }

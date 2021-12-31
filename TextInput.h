@@ -77,7 +77,6 @@ public:
 	friend void TextInput_Click(guiObject *sender, EventArgs *e);
 	friend void TextInput_Focus(guiObject *sender, EventArgs *e);
 	friend void TextInput_Drag(guiObject *sender, EventArgs *e);
-	friend size_t TextInput_resolveCursorPos(TextInput *TextInput);
 	friend size_t TextInput_resolveCursorPos(TextInput *TextInput, float *cursorPos);
 	friend void TextInput_Drop(guiObject *sender, EventArgs *e);
 	friend void TextInput_KeyPress(guiObject *sender, EventArgs *e);

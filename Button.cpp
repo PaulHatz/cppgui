@@ -142,7 +142,7 @@ void Button::setTextAlign(ButtonText_Align newAlign)
 	this->updateGuiElements(0);
 }
 
-Button::Button(guiObject *parent) : guiObject(parent, this)
+Button::Button(guiObject *parent) : guiObject(parent, ObjectType::OBJ_Button)
 {
 	if (parent) {
 		parent->addChild(this);

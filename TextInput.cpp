@@ -1,11 +1,16 @@
 #include "main.h"
 
 
-size_t TextInput_resolveCursorPos(TextInput *textInput, float *cursorPos)
+size_t TextInput_resolveCursorPos(TextInput *textInput, float *cursorPos = nullptr)
 {
 	std::string text = textInput->getText();
 
-	float offsetX = cursorPos[0] - (textInput->getX() + textInput->padding[0]);
+	//Should we use an inputted cursor position or the current one. Important for text highlighting on selection
+	float offsetX = 0.f;
+	if(cursorPos != nullptr)
+		offsetX = cursorPos[0] - (textInput->getX() + textInput->padding[0]);
+	else offsetX = guiApplication->getCursorInfo()->cursorPosition[0] - (textInput->getX() + textInput->padding[0]);
+
 	float stringWidth = getStringWidth(text, textInput->getFontSize(), 0);
 
 	size_t len = strlen(text.c_str());
@@ -34,42 +39,6 @@ size_t TextInput_resolveCursorPos(TextInput *textInput, float *cursorPos)
 		return idx;
 
 	}
-	return 0;
-}
-
-size_t TextInput_resolveCursorPos(TextInput *textInput)
-{
-	std::string text = textInput->getText();
-
-	float offsetX = guiApplication->getCursorInfo()->cursorPosition[0] - (textInput->getX() + textInput->padding[0]);
-	float stringWidth = getStringWidth(text, textInput->getFontSize(), 0);
-
-	size_t len = strlen(text.c_str());
-
-	if (!text.empty()) {
-
-		if (offsetX >= stringWidth)
-			return len;
-
-		if (offsetX <= getStringWidth(text.substr(0, 1), textInput->getFontSize(), 0))
-			return 0;
-
-		float currentWidth = 0.f;
-		size_t idx = 0;
-
-		do {
-			if (idx + 1 >= len)
-				break;
-
-			idx++;
-
-			currentWidth = getStringWidth(text.substr(0, idx + 1), textInput->getFontSize(), 0);
-
-		} while (currentWidth <= offsetX);
-
-		return idx;
-	}
-
 	return 0;
 }
 
@@ -772,7 +741,7 @@ void TextInput::updateValue(std::string newValue)
 {
 }
 
-TextInput::TextInput(guiObject *parent, ObjectType objectType) : guiObject(parent, this, objectType)
+TextInput::TextInput(guiObject *parent, ObjectType objectType) : guiObject(parent, objectType)
 {
 	if (parent) {
 		parent->addChild(this);

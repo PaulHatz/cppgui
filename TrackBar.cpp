@@ -52,8 +52,8 @@ void TrackBar::updateGuiElements(int time)
 	}
 
 	if (this->selectorElem) {
-		auto c = this->getChildren().front();
-		this->selectorElem->MoveOverTime(time, c->getX(), c->getY() + 8.f);
+		auto child = this->getChildren().front();
+		this->selectorElem->MoveOverTime(time, child->getX(), child->getY() + 8.f);
 	}
 }
 
@@ -97,7 +97,7 @@ void TrackBar::setValue(float value)
 	guiApplication->sendEvent(eventValueChanged, this);
 }
 
-TrackBar::TrackBar(guiObject *parent) : guiObject(parent, this)
+TrackBar::TrackBar(guiObject *parent) : guiObject(parent, ObjectType::OBJ_TrackBar)
 {
 	if (parent) {
 		parent->addChild(this);

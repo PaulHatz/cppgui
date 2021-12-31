@@ -80,7 +80,7 @@ void RadioButton::setText(std::string text)
 	this->setSize(getStringWidth(this->text, this->fontScale, this->font) + 25, 15);
 }
 
-RadioButton::RadioButton(guiObject *parent) : guiObject(parent, this)
+RadioButton::RadioButton(guiObject *parent) : guiObject(parent, ObjectType::OBJ_RadioButton)
 {
 	if (parent) {
 		parent->addChild(this);

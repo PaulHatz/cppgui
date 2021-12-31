@@ -114,7 +114,7 @@ void CheckBox::setText(std::string text)
 	this->setSize(getStringWidth(this->text, this->fontScale, this->font) + 25, 15);
 }
 
-CheckBox::CheckBox(guiObject *parent) : guiObject(parent, this)
+CheckBox::CheckBox(guiObject *parent) : guiObject(parent, ObjectType::OBJ_CheckBox)
 {
 	if (parent) {
 		parent->addChild(this);

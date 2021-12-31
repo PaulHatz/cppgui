@@ -122,7 +122,7 @@ void TabPage::show()
 	}
 }
 
-TabPage::TabPage(guiObject *parent, guiObject *hitBox, unsigned int index) : guiObject(parent, this)
+TabPage::TabPage(guiObject *parent, guiObject *hitBox, unsigned int index) : guiObject(parent, ObjectType::OBJ_TabPage)
 {
 	if (parent != nullptr)
 		parent->addChild(this);
